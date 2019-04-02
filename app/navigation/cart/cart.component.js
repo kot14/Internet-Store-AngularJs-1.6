@@ -1,5 +1,7 @@
 function cartController(){
-    var vm = this;
+
+    app.controller('cartController', function() {
+    })
     }
     app.component('cart',{
         templateUrl:'app/navigation/cart/cart.html',

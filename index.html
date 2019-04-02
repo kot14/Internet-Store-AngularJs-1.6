@@ -7,16 +7,11 @@
         <script src="main.js"></script>
         <script src="app/navigation/shopping-list/shopping-list.component.js"></script>
         <script src="app/navigation/cart/cart.component.js"></script>
-        <script src="./angular-1.6.1/angular-route.js"></script>
+        <script src="/angular-1.6.1/angular-route.js"></script>
     </head>
     <body ng-controller="main as vm">
+        <header ng-include="'header.html'"></header>
         <main>       
-            <nav style="display:flex; justify-content: space-between; ">
-                <button>Shopping list</button>
-                <button>Cart:{{vm.cnt}}</button>
-            </nav>
-            <hr>
-            <shoppingList></shoppingList>
             <div ng-view></div>
         </main>
     </body>
