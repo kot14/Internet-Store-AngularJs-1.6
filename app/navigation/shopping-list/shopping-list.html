@@ -4,19 +4,19 @@
         <tr>
         <th>id</th>
         <th>name</th>
-        <th>count in storage</th>
-        <th>count in store</th>
+        <th>Price</th>
+        <th>available</th>
         <th>Actions</th>
         </tr>
         </thead>
-        <tbody ng-repeat="product in vm.phones " ng-click="vm.test($index)">
+        <tbody ng-repeat="item in vm.items " >
         <tr>
         <td>{{$index +1}}</td>
-        <td>{{product}}</td>
-        <td>2</td>
-        <td>1</td>
+        <td>{{item.text}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.available}}</td>
         <td>
-           <button ng-click="vm.add()">Add to Cart</button>
+           <button ng-click="vm.add($index)">Add to Cart</button>
         </td>
         </tr>
         </tbody>
