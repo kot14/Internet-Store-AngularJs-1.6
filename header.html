@@ -1,7 +1,6 @@
 <nav style="display:flex; justify-content: space-between; ">
-    <button ng-click="vm.go()">Shopping list</button>
-    <a href="#!/cart">cart</a>
-    <a href="#!/home">home</a>
-    <button ng-click="vm.getCart()">Cart</button>
+    <button ng-click="vm.goHome()">Shopping list</button>
+
+    <button ng-disabled="vm.cartStatus" ng-click="vm.getCart()">Cart:{{vm.cartCounter}}</button>
 </nav>
 <hr>
