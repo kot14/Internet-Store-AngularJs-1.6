@@ -24,6 +24,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider) {
 app.controller('main', function ($location) {
     this.cartStatus = true;
     this.cartCounter = 0;
+    
 
     this.items = [
         { text: 'Iphone', price: '400$', available: true },

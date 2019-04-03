@@ -1,12 +1,10 @@
-<div class="row" style="display: flex; justify-content: center;">
-    <table cellspacing="2" border="1" cellpadding="5" width="600" style="text-align:center">
+<div class="container">
+    <table class="table  table-striped ">
         <thead>
-            <tr>
+            <tr > 
                 <th>Name</th>
                 <th>Price</th>
-                <th>
-                    Actions
-                </th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody ng-repeat="cartItem in vm.cartItems track by $index">
