@@ -1,23 +1,24 @@
-<div class="mx-auto" style="width: 800px;" >
+<div class="mx-auto" style="width: 800px;">
     <table class="table table-striped table-hover">
-        <thead  >
-        <tr >
-
-        <th>name</th>
-        <th>Price</th>
-        <th>available</th>
-        <th>Actions</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Available</th>
+                <th>Actions</th>
+            </tr>
         </thead>
         <tbody ng-repeat="item in vm.items">
-        <tr>
-        <td>{{item.text}}</td>
-        <td>{{item.price}}</td>
-        <td>{{item.available}}</td>
-        <td>
-           <button class="btn btn-success" ng-click="vm.add($index)">Add to Cart</button>
-        </td>
-        </tr>
+            <tr>
+                <td>{{item.text}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.available}}</td>
+                <td>
+                    <button class="btn btn-success" ng-click="vm.add($index)">
+                        Add to Cart
+                    </button>
+                </td>
+            </tr>
         </tbody>
-        </table>
+    </table>
 </div>

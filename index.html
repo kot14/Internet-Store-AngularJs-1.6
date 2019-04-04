@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular-route.min.js"></script>
 </head>
 
-<body ng-controller="main as vm">
+<body ng-controller="main as vm" ng-init="vm.init()">
     <header ng-include="'header.html'"></header>
     <main>
         <div ng-view></div>

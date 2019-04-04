@@ -1,5 +1,7 @@
 var app = angular.module('index', ['ngRoute']);
 
+
+
 app.config(['$locationProvider', function ($locationProvider) {
     $locationProvider.hashPrefix('');
 }]);
@@ -22,9 +24,19 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider) {
 }]);
 
 app.controller('main', function ($location) {
+
+    this.init = function () {
+        let json = localStorage.getItem("priceList");
+        data = JSON.parse(json)
+        this.cartItems = data;
+        this.cartCounter = this.cartItems.length;
+        if (this.cartItems.length > 0) {
+            this.cartStatus = false;
+        };
+    }
     this.cartStatus = true;
     this.cartCounter = 0;
-    
+
 
     this.items = [
         { text: 'Iphone', price: '400$', available: true },
@@ -49,12 +61,13 @@ app.controller('main', function ($location) {
         let json = localStorage.getItem("priceList");
         data = JSON.parse(json)
         this.cartItems = data;
+
     }
     this.clear = function ($index) {
-        this.cartCounter --
+        this.cartCounter--
         this.cartItems.splice($index, 1);
         localStorage.setItem("priceList", JSON.stringify(this.cartItems));
-        if(this.cartItems.length <= 0){
+        if (this.cartItems.length <= 0) {
             $location.path('/home')
             this.cartStatus = true;
         };
