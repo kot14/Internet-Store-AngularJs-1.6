@@ -26,13 +26,17 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider) {
 app.controller('main', function ($location) {
 
     this.init = function () {
-        let json = localStorage.getItem("priceList");
-        data = JSON.parse(json)
-        this.cartItems = data;
-        this.cartCounter = this.cartItems.length;
-        if (this.cartItems.length > 0) {
+        if (localStorage.length > 0) {
             this.cartStatus = false;
-        };
+            let json = localStorage.getItem("priceList");
+            data = JSON.parse(json)
+            this.cartItems = data;
+            this.cartCounter = this.cartItems.length;
+        }
+        else{
+            localStorage.setItem("priceList", JSON.stringify(this.cartItems));
+        }
+        
     }
     this.cartStatus = true;
     this.cartCounter = 0;
