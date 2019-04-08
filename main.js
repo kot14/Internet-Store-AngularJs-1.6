@@ -26,7 +26,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider) {
 app.controller('main', function ($location) {
 
     this.init = function () {
-        if (localStorage.length > 1) {
+        if (localStorage.length > 0) {
             this.cartStatus = false;
             let json = localStorage.getItem("priceList");
             data = JSON.parse(json)
