@@ -1,1 +1,3 @@
-"# Internet-Store-AngularJs-1.6" 
+Installation 
+1.install: npm i live-server -g 
+2.run: live-server

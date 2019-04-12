@@ -27,7 +27,6 @@ app.controller('main', function ($location) {
 
     this.init = function () {
         if (localStorage.length > 0) {
-            this.cartStatus = false;
             let json = localStorage.getItem("priceList");
             data = JSON.parse(json)
             this.cartItems = data;
@@ -38,9 +37,8 @@ app.controller('main', function ($location) {
         }
         
     }
-    this.cartStatus = true;
+    
     this.cartCounter = 0;
-
 
     this.items = [
         { text: 'Iphone', price: '400$', available: true },
@@ -56,7 +54,6 @@ app.controller('main', function ($location) {
     this.add = function ($index) {
         this.cartItems.push(this.items[$index]);
         localStorage.setItem("priceList", JSON.stringify(this.cartItems));
-        this.cartStatus = false;
         this.cartCounter = this.cartItems.length;
     };
 
@@ -73,7 +70,6 @@ app.controller('main', function ($location) {
         localStorage.setItem("priceList", JSON.stringify(this.cartItems));
         if (this.cartItems.length <= 0) {
             $location.path('/home')
-            this.cartStatus = true;
         };
     }
 });
